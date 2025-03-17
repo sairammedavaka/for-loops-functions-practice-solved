@@ -5,7 +5,15 @@
 
 export function concatArrays(arr1, arr2) {
   // Your code goes here...
-  const concatarr = arr1.concat(arr2);
+  const concatarr = [];
+
+  for (let char of arr1) {
+    concatarr.push(char);
+  }
+
+  for (let char of arr2) {
+    concatarr.push(char);
+  }
 
   return concatarr;
 }

@@ -6,9 +6,18 @@
 
 export function flatArrays(array) {
   // Your code goes here...
-  const flatarr = array.flat();
+  const flatArray = [];
+  for (let item of array) {
+    if (item.length >= 2) {
+      for (let item2 of item) {
+        flatArray.push(item2);
+      }
+    } else {
+      flatArray.push(item);
+    }
+  }
 
-  return flatarr;
+  return flatArray;
 }
 
 // === TEST YOURSELF ===

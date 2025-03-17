@@ -6,15 +6,27 @@
 
 export function getClientsWithWrongBalance(array) {
   // Your code goes here...
-  const names = [];
+  const wrongBalance = [];
 
   for (let item of array) {
-    if (item.balance > 2000) {
-      names.push(item);
+    let depositBalance = 0;
+    let withdrawalBalance = 0;
+    if (item.deposits) {
+      for (let deposit of item.deposits) {
+        depositBalance += deposit;
+      }
+    }
+    if (item.withdrawals) {
+      for (let withdrawal of item.withdrawals) {
+        withdrawalBalance += withdrawal;
+      }
+    }
+    if (depositBalance - withdrawalBalance !== item.balance) {
+      wrongBalance.push(item);
     }
   }
 
-  return names;
+  return wrongBalance;
 }
 
 // === TEST YOURSELF ===

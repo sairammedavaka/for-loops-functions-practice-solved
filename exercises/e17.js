@@ -6,7 +6,14 @@
 
 export function doesArrayInclude(array, value) {
   // Your code goes here...
-  return array.includes(value);
+  let hasAvalue = false;
+  for (let char of array) {
+    if (char.toLowerCase() === value.toLowerCase()) {
+      hasAvalue = true;
+    }
+  }
+
+  return hasAvalue;
 }
 
 // === TEST YOURSELF ===
